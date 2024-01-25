@@ -1,0 +1,103 @@
+\chapter{Introduction}
+\label{chap:introduction}
+\begin{table}[h]
+    \caption{Comparison of functions of common robot simulators \cite{collins2021review}}
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\extrarowheight}{5pt}
+    \resizebox{\textwidth}{!}{% 
+        \large % 文字の大きさを大きくする
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline Simulator & \begin{tabular}{c} 
+        RGBD \\
+        + \\
+        LiDAR
+        \end{tabular} & \begin{tabular}{l} 
+        Force \\
+        Sensor
+        \end{tabular} & \begin{tabular}{c} 
+        Linear + Cable \\
+        Actuator
+        \end{tabular} & \begin{tabular}{l} 
+        Multi-Body \\
+        Import
+        \end{tabular} & \begin{tabular}{l} 
+        Soft-Body \\
+        Contacts
+        \end{tabular} & \begin{tabular}{c} 
+        DEM \\
+        Simulation
+        \end{tabular} & \begin{tabular}{c} 
+        Fluid \\
+        Mechanics
+        \end{tabular} & \begin{tabular}{l} 
+        Headless \\
+        Mode
+        \end{tabular} & \begin{tabular}{c} 
+        ROS \\
+        Support
+        \end{tabular} & HITL & Teleoperation & \begin{tabular}{c} 
+        Realistic \\
+        Rendering
+        \end{tabular} & \begin{tabular}{c} 
+        Inverse \\
+        Kinematics
+        \end{tabular} \\
+        \hline Airsim & $\checkmark$ & \times & \times & \times & \times & \times & \times & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$, unreal & \times \\
+        \hline CARLA & $\checkmark$ & \times & \times & \times & \times & \times & \times & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ & $\checkmark$, unreal & \times \\
+        \hline CoppeliaSim & $\checkmark$ & $\checkmark$ & \begin{tabular}{l} 
+        Linear \\
+        only
+        \end{tabular} & $\checkmark$ & \times & $\checkmark$ & \times & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ \\
+        \hline Gazebo & $\checkmark$ & $\checkmark$ & \begin{tabular}{l} 
+        Linear \\
+        only
+        \end{tabular} & $\checkmark$ & \times & \begin{tabular}{l} 
+        Through \\
+        Fluidix
+        \end{tabular} & \begin{tabular}{l} 
+        Through \\
+        Fluidix
+        \end{tabular} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ \\
+        \hline MjoCo & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & Limited & $\checkmark$ & \times & \begin{tabular}{l} 
+        HAPTIX \\
+        only
+        \end{tabular} & \begin{tabular}{l} 
+        HAPTIX \\
+        only
+        \end{tabular} & \times & \times \\
+        \hline PyBullet & $\checkmark$ & $\checkmark$ & \begin{tabular}{l} 
+        Linear \\
+        only
+        \end{tabular} & $\checkmark$ & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ & \times & \times & $\checkmark$ & \times & $\checkmark$ \\
+        \hline SOFA & \times & \times & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$, Unity & \times \\
+        \hline UWSim & \begin{tabular}{l} 
+        RGBD \\
+        only
+        \end{tabular} & $\checkmark$ &\times & $\checkmark$ & \times & \times & \times & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$, custom & \times \\
+        \hline Chrono & $\checkmark$ & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \times & \times & $\checkmark$ & $\checkmark$, offline & $\checkmark$ \\
+        \hline Webots & $\checkmark$ & $\checkmark$ & linear & $\checkmark$ & \times & \times & Limited & $\checkmark$ & $\checkmark$ & \times & $\checkmark$ & \times & \times \\
+        \hline
+        \end{tabular}
+    }
+    \label{tab:Comparisonoffunctionsofcommonrobotsimulators}
+\end{table}
+
+\singlespacing
+In the realm of robotics, overcoming the disparity between simulated environments and real-world applications presents a significant hurdle\cite{anderson2021sim}. The creation of a simulation environment inherently presupposes its congruence with the actual world, a notion fraught with complexity. Integrating real-world physical limitations within such a simulated framework is notably challenging\cite{Acosta2021Validating,Miglino1995Evolving}. Acknowledging and surmounting this divergence is imperative for the advancement and societal integration of robotic technologies.
+\singlespacing
+
+Several robot simulation environments have been proposed to integrate simulations with the physical limitations of the real world \cite{collins2021review}.  There are various simulation environments for robots(shown in Table.\ref{tab:Comparisonoffunctionsofcommonrobotsimulators}). For example, Gazebo\cite{koenig2004design} and Choreonoid\cite{nakaoka2012choreonoid} for service robots. Unity\cite{unity2023}, Unreal Engine 4\cite{unrealengine4}, and 5\cite{unreal2023engine} for general arm robots. There are several simulation environments available for different applications, such as AirSim\cite{shah2018airsim}, FlightGear\cite{sorton2005simulated}, and CARLA. It is important to use specific terms consistently and adhere to industry standards for metrics and units. Additionally, there are system simulation environments, like air traffic control, that do not require a physical environment.  These robotics simulation environments integrate real-world physical limitations.
+\singlespacing
+
+Robotic simulation environments pose challenges in accurately replicating large 3D spaces. For example, those used by service robots. Creating 3D virtual environments is a costly and time-consuming process, making it difficult to achieve both realism and accuracy\cite{connolly2021realistic}\cite{byravan2023nerf2real}. In the real world, objects are segmented and formed into complete shapes, with light textures and reflections from light sources appearing as continuous surfaces. In simulations, objects are represented as a sampling of discrete points, which makes it difficult to replicate the continuity of reality\cite{slater2002computer}.
+\singlespacing
+Accurately recreating real-world 3D environments is crucial for completing specific challenges. Importing real-world 3D environments automatically can help meet these challenges\cite{Liu2017Design}. However, in 3D virtual environments, the color representation of textures on object surfaces is not constant, which poses a major challenge. This is because textures are measured in different colors depending on the reflection of the light source. Accurate color reproduction is crucial for realistic 3D environments, as color indeterminacy affects not only visible light but also light sources like lasers. To achieve this, it is important to have a precise understanding of texture color.
+\singlespacing
+
+ We suggest a straightforward, precise, and photorealistic mapping method for constructing 3D virtual environments, along with a robot simulation system that employs it. The environment is modeled using Luma AI\cite{luma2023unreal}, a cloud-based Neural Radiance Field (NeRF)\cite{mildenhall2020nerf} technology that allows for photorealistic rendering of 3D objects. The Luma AI-generated environment model produces a 3D virtual environment and point cloud. Two maps are constructed from this point cloud: a voxel map for pathfinding and a near-visual surface map for recognition. The voxel map is used by the robot to navigate while the near-visual surface map is used for recognition.
+\singlespacing
+
+To implement the robot simulation system, we will utilize Unreal Engine 5 to create a simulation environment that closely resembles reality. The engine will display visual maps and place voxel maps as obstacles. The robot simulation will use Robot Operating System2(ROS2)\cite{ros2}, a visual map for robot recognition in visible light, and a voxel map that uses depth sensing technology for object recognition and avoidance. 
+\singlespacing
+This research presents pivotal advancements in the realm of robotic simulation environments, addressing the critical challenge of bridging the gap between simulated and real-world settings. Firstly, it emphasizes the integration of real-world physical limitations into simulation environments, a task previously noted for its complexity and necessity for the progress of robotic technologies. By employing specific simulation environments like Gazebo, Choreonoid, Unity, Unreal Engine 4 and 5, AirSim, FlightGear, and CARLA, this study adheres to industry standards, ensuring consistency and relevance. Furthermore, it tackles the formidable task of replicating large 3D spaces accurately, a known issue in robotic simulations, particularly for service robots. The introduction of a novel mapping method using Luma AI and Neural Radiance Field (NeRF) technology marks a significant leap forward. This method not only achieves photorealistic rendering of 3D objects but also facilitates the construction of realistic virtual environments and point clouds. The creation of dual maps from these point clouds - a voxel map for robot navigation and a near-visual surface map for recognition - represents a nuanced approach to robotic perception and interaction within these simulated environments. Lastly, the implementation of this technology in a robot simulation system using Unreal Engine 5 and ROS2 demonstrates a practical application of these theoretical advancements, showcasing a system that utilizes both visual and depth sensing technologies for enhanced robot recognition and obstacle avoidance. These contributions collectively represent a substantial stride towards more accurate, realistic, and functional robotic simulation environments, bridging the gap between simulation and real-world application, and setting a new standard for future research in this field.
