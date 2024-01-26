@@ -24,7 +24,7 @@ To compile the document, run the following command in the terminal:
 ```
 pdflatex main.tex
 ```
-Replace `main.tex` with the main file name of the LaTeX document.
+Replace `template_main.tex` with the main file name of the LaTeX document.
 
 
 ## Acknowledgments
